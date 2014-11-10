@@ -1,5 +1,5 @@
 %define major 5
-%define libname %mklibname input %{lib_major}
+%define libname %mklibname input %{major}
 %define develname %mklibname -d input
 
 Summary:	Handles input devices for display servers
