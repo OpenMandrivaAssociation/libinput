@@ -52,7 +52,7 @@ rm -f %{buildroot}%{_libdir}/*.la
 %{_libdir}/%{name}.so.%{major}*
 
 %files -n %{develname}
-%doc README COPYING
+%doc README.txt COPYING
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
