@@ -1,4 +1,4 @@
-%define major 5
+%define major 7
 %define libname %mklibname input %{major}
 %define develname %mklibname -d input
 
@@ -49,10 +49,10 @@ Development files and heders for %{name}.
 rm -f %{buildroot}%{_libdir}/*.la
 
 %files -n %{libname}
-%{_libdir}/*.so.%{major}*
+%{_libdir}/lib*%{name}.so.%{major}*
 
 %files -n %{develname}
 %doc README COPYING
-%{_libdir}/*.so
+%{_libdir}/*%{name}.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
