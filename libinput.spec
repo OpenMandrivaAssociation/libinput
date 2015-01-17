@@ -49,10 +49,10 @@ Development files and heders for %{name}.
 rm -f %{buildroot}%{_libdir}/*.la
 
 %files -n %{libname}
-%{_libdir}/lib*%{name}.so.%{major}*
+%{_libdir}/%{name}.so.%{major}*
 
 %files -n %{develname}
 %doc README COPYING
-%{_libdir}/*%{name}.so
+%{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
