@@ -21,6 +21,7 @@ compositors and to provide a generic X.Org input driver.
 %package -n %{libname}
 Summary:	Libraries for libinput
 Group:		System/Libraries
+Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
 libinput is a library to handle input devices in Wayland
@@ -47,6 +48,10 @@ Development files and heders for %{name}.
 %makeinstall_std
 
 rm -f %{buildroot}%{_libdir}/*.la
+
+%files
+%{_libdir}/udev/libinput-device-group
+%{_libdir}/udev/rules.d/80-libinput-device-groups.rules
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
