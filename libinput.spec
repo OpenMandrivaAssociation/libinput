@@ -50,10 +50,12 @@ Development files and heders for %{name}.
 rm -f %{buildroot}%{_libdir}/*.la
 
 %files
-%{_bindir}/libinput-list-devices
+%{_bindir}/libinput-*-devices
 %{_libdir}/udev/libinput-device-group
+%{_libdir}/udev/hwdb.d/90-libinput-model-quirks.hwdb
+%{_libdir}/udev/rules.d/90-libinput-model-quirks.rules
 %{_libdir}/udev/rules.d/80-libinput-device-groups.rules
-%{_mandir}/man1/libinput-list-devices.1.*
+%{_mandir}/man1/libinput-*-devices.1.*
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
