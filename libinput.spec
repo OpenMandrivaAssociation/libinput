@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	0.15.1
+Version:	0.16.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -40,7 +40,7 @@ Development files and heders for %{name}.
 %setup -q
 
 %build
-%configure
+CFLAGS="%{optflags} -Qunused-arguments" %configure
 
 %make
 
@@ -57,7 +57,7 @@ rm -f %{buildroot}%{_libdir}/*.la
 %{_libdir}/udev/rules.d/90-libinput-model-quirks.rules
 %{_libdir}/udev/rules.d/80-libinput-device-groups.rules
 %{_mandir}/man1/libinput-list-devices.1.*
-%{_mandir}/man/man1/libinput-debug-events.1.*
+%{_mandir}/man1/libinput-debug-events.1.*
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
