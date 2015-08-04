@@ -55,10 +55,7 @@ rm -f %{buildroot}%{_libdir}/*.la
 %{_bindir}/libinput-debug-events
 %{_libdir}/udev/libinput-device-group
 %{_libdir}/udev/hwdb.d/90-libinput-model-quirks.hwdb
-#%{_libdir}/udev/rules.d/90-libinput-model-quirks.rules
-#%{_libdir}/udev/rules.d/80-libinput-device-groups.rules
-%{_libdir}/udev/80-libinput-device-groups-litest.rules
-%{_libdir}/udev/90-libinput-model-quirks-litest.rules
+%{_libdir}/udev/rules.d/*.rules
 %{_libdir}/udev/libinput-model-quirks
 %{_mandir}/man1/libinput-list-devices.1.*
 %{_mandir}/man1/libinput-debug-events.1.*
