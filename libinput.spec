@@ -13,6 +13,7 @@ Source0:	http://www.freedesktop.org/software/libinput/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libevdev)
+BuildRequires:	pkgconfig(libwacom)
 
 %description
 libinput is a library to handle input devices in Wayland
