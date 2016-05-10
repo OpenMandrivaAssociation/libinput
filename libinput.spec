@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.2.3
+Version:	1.3.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -51,7 +51,6 @@ CFLAGS="%{optflags} -Qunused-arguments" %configure
 rm -f %{buildroot}%{_libdir}/*.la
 
 %files
-
 %{_bindir}/libinput-list-devices
 %{_bindir}/libinput-debug-events
 %{_libdir}/udev/libinput-device-group
