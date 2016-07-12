@@ -5,7 +5,7 @@
 Summary:	Handles input devices for display servers
 Name:		libinput
 Version:	1.3.3
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/wiki/Software/libinput/
@@ -41,7 +41,7 @@ Development files and heders for %{name}.
 %setup -q
 
 %build
-CFLAGS="%{optflags} -Qunused-arguments" %configure
+CFLAGS="%{optflags} -Qunused-arguments" %configure --with-udev-dir=/lib/udev
 
 %make
 
@@ -53,10 +53,10 @@ rm -f %{buildroot}%{_libdir}/*.la
 %files
 %{_bindir}/libinput-list-devices
 %{_bindir}/libinput-debug-events
-%{_libdir}/udev/libinput-device-group
-%{_libdir}/udev/hwdb.d/90-libinput-model-quirks.hwdb
-%{_libdir}/udev/rules.d/*.rules
-%{_libdir}/udev/libinput-model-quirks
+/lib/udev/libinput-device-group
+%_udevhwdbdir/90-libinput-model-quirks.hwdb
+%_udevrulesdir/*.rules
+/lib/udev/libinput-model-quirks
 %{_mandir}/man1/libinput-list-devices.1.*
 %{_mandir}/man1/libinput-debug-events.1.*
 
