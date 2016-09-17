@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.4.1
+Version:	1.5.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -54,8 +54,8 @@ rm -f %{buildroot}%{_libdir}/*.la
 %{_bindir}/libinput-list-devices
 %{_bindir}/libinput-debug-events
 /lib/udev/libinput-device-group
-%_udevhwdbdir/90-libinput-model-quirks.hwdb
-%_udevrulesdir/*.rules
+%{_udevhwdbdir}/90-libinput-model-quirks.hwdb
+%{_udevrulesdir}/*.rules
 /lib/udev/libinput-model-quirks
 %{_mandir}/man1/libinput-list-devices.1.*
 %{_mandir}/man1/libinput-debug-events.1.*
