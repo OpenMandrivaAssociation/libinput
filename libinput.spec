@@ -15,7 +15,7 @@ BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	doxygen
-BuildRequires:	pkgconfig(libxdot)
+BuildRequires:	graphviz
 
 %description
 libinput is a library to handle input devices in Wayland
