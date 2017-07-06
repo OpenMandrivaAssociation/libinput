@@ -14,8 +14,6 @@ BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
-BuildRequires:	doxygen
-BuildRequires:	graphviz
 
 %description
 libinput is a library to handle input devices in Wayland
@@ -43,7 +41,7 @@ Development files and heders for %{name}.
 %setup -q
 
 %build
-CFLAGS="%{optflags} -Qunused-arguments" %configure --with-udev-dir=/lib/udev
+CFLAGS="%{optflags} -Qunused-arguments" %configure --disable-documentation --with-udev-dir=/lib/udev
 
 %make
 
