@@ -53,20 +53,21 @@ CFLAGS="%{optflags} -Qunused-arguments" %configure --disable-documentation --dis
 rm -f %{buildroot}%{_libdir}/*.la
 
 %files
+%{_bindir}/libinput
 %{_bindir}/libinput-list-devices
 %{_bindir}/libinput-debug-events
 /lib/udev/libinput-device-group
 %{_udevhwdbdir}/90-libinput-model-quirks.hwdb
 %{_udevrulesdir}/*.rules
 /lib/udev/libinput-model-quirks
-%{_mandir}/man1/libinput-list-devices.1.*
-%{_mandir}/man1/libinput-debug-events.1.*
+%{_libexecdir}/libinput/libinput*
+%{_mandir}/man1/libinput*.1.*
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
 
 %files -n %{develname}
-%doc README.txt COPYING
+%doc README.md COPYING
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/*
 %{_includedir}/*
