@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
-#BuildRequires:	pkgconfig(libunwind)
+BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(check)
 
 %description
