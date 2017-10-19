@@ -17,7 +17,7 @@ BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
-BuildRequires:	ninja
+BuildRequires:	valgrind
 
 %description
 libinput is a library to handle input devices in Wayland
