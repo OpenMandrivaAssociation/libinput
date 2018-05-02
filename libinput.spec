@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.10.5
+Version:	1.10.6
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
+BuildRequires:	systemd
 BuildRequires:	valgrind
 
 %description
