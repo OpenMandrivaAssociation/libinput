@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
+BuildRequires:	systemd
 BuildRequires:	valgrind
 
 %description
