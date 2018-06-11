@@ -12,6 +12,7 @@ URL:		http://www.freedesktop.org/wiki/Software/libinput/
 Source0:	http://www.freedesktop.org/software/libinput/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
+BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(libunwind)
