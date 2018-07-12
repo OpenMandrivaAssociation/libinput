@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.10.7
+Version:	1.11.2
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -12,6 +12,7 @@ URL:		http://www.freedesktop.org/wiki/Software/libinput/
 Source0:	http://www.freedesktop.org/software/libinput/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
+BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(libunwind)
@@ -54,8 +55,6 @@ CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentat
 
 %files
 %{_bindir}/libinput
-%{_bindir}/libinput-list-devices
-%{_bindir}/libinput-debug-events
 /lib/udev/libinput-device-group
 %{_udevhwdbdir}/90-libinput-model-quirks.hwdb
 %{_udevrulesdir}/*.rules
