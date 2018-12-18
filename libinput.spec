@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.12.3
+Version:	1.12.4
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -44,7 +44,8 @@ Requires:	%{libname} = %{EVRD}
 Development files and heders for %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
+
 CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
 
 %build
