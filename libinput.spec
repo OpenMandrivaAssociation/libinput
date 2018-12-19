@@ -5,7 +5,7 @@
 Summary:	Handles input devices for display servers
 Name:		libinput
 Version:	1.12.4
-Release:	1
+Release:	0.1
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/wiki/Software/libinput/
@@ -44,7 +44,7 @@ Requires:	%{libname} = %{EVRD}
 Development files and heders for %{name}.
 
 %prep
-%autosetup -p1
+%setup -q
 
 CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
 
