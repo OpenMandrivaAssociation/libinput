@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.11.2
+Version:	1.12.4
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -18,7 +18,7 @@ BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
-BuildRequires:	systemd
+BuildRequires:	systemd-macros
 BuildRequires:	valgrind
 
 %description
@@ -44,7 +44,8 @@ Requires:	%{libname} = %{EVRD}
 Development files and heders for %{name}.
 
 %prep
-%setup -q
+%autosetup -p1
+
 CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
 
 %build
@@ -56,10 +57,10 @@ CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentat
 %files
 %{_bindir}/libinput
 /lib/udev/libinput-device-group
-%{_udevhwdbdir}/90-libinput-model-quirks.hwdb
 %{_udevrulesdir}/*.rules
 /lib/udev/libinput-model-quirks
 %{_libexecdir}/libinput/libinput*
+%{_datadir}/%{name}/*.quirks
 %{_mandir}/man1/libinput*.1.*
 
 %files -n %{libname}
