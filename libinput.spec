@@ -57,8 +57,8 @@ CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentat
 %files
 %{_bindir}/libinput
 /lib/udev/libinput-device-group
+/lib/udev/libinput-fuzz-override
 %{_udevrulesdir}/*.rules
-/lib/udev/libinput-model-quirks
 %{_libexecdir}/libinput/libinput*
 %{_datadir}/%{name}/*.quirks
 %{_mandir}/man1/libinput*.1.*
