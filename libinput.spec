@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.14.0
+Version:	1.14.1
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -15,7 +15,6 @@ BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
-BuildRequires:	pkgconfig(libunwind)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
 BuildRequires:	systemd-macros
@@ -62,6 +61,9 @@ CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentat
 %{_libexecdir}/libinput/libinput*
 %{_datadir}/%{name}/*.quirks
 %{_mandir}/man1/libinput*.1.*
+%dir %{_datadir}/zsh
+%dir %{_datadir}/zsh/site-functions
+%{_datadir}/zsh/site-functions/*
 
 %files -n %{libname}
 %{_libdir}/%{name}.so.%{major}*
