@@ -18,7 +18,6 @@ BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
 BuildRequires:	systemd-macros
-BuildRequires:	valgrind
 
 %description
 libinput is a library to handle input devices in Wayland
