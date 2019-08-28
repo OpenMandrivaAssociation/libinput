@@ -44,7 +44,7 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-CFLAGS="%{optflags} -Qunused-arguments" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
+CFLAGS="%{optflags}" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
 
 %build
 %meson_build
