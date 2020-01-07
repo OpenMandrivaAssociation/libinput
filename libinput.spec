@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.14.3
+Version:	1.15.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
