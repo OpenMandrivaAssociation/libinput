@@ -55,9 +55,12 @@ CFLAGS="%{optflags}" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-g
 %files
 %{_bindir}/libinput
 /lib/udev/libinput-device-group
+/lib/udev/libinput-fuzz-extract
+/lib/udev/libinput-fuzz-to-zero
 %{_udevrulesdir}/*.rules
 %{_libexecdir}/libinput/libinput*
 %{_datadir}/%{name}/*.quirks
+%{_mandir}/man1/%{name}*.1*
 %dir %{_datadir}/zsh
 %dir %{_datadir}/zsh/site-functions
 %{_datadir}/zsh/site-functions/*
