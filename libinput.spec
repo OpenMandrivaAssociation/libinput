@@ -2,10 +2,12 @@
 %define libname %mklibname input %{major}
 %define develname %mklibname -d input
 
+%global optflags %{optflags} -O3
+
 Summary:	Handles input devices for display servers
 Name:		libinput
 Version:	1.15.0
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/wiki/Software/libinput/
@@ -44,7 +46,7 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-CFLAGS="%{optflags}" %meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
+%meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
 
 %build
 %meson_build
