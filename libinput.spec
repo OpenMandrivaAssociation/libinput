@@ -6,8 +6,8 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.15.0
-Release:	2
+Version:	1.15.1
+Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/wiki/Software/libinput/
