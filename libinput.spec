@@ -2,11 +2,9 @@
 %define libname %mklibname input %{major}
 %define develname %mklibname -d input
 
-%global optflags %{optflags} -O3
-
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.15.3
+Version:	1.15.4
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
