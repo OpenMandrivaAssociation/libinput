@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.17.1
+Version:	1.17.2
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -44,7 +44,7 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-%meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
+%meson -Dudev-dir="$(dirname %{_udevrulesdir})" -Ddocumentation=false -Ddebug-gui=false
 
 %build
 %meson_build
