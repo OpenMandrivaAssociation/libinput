@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.16.4
+Version:	1.18.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -17,7 +17,7 @@ BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
-BuildRequires:	systemd-macros
+BuildRequires:	systemd-rpm-macros
 
 %description
 libinput is a library to handle input devices in Wayland
@@ -44,7 +44,7 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-%meson -Dudev-dir=/lib/udev -Ddocumentation=false -Ddebug-gui=false
+%meson -Dudev-dir="$(dirname %{_udevrulesdir})" -Ddocumentation=false -Ddebug-gui=false
 
 %build
 %meson_build
