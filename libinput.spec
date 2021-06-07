@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.17.3
+Version:	1.18.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -17,7 +17,7 @@ BuildRequires:	pkgconfig(libevdev)
 BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	meson
-BuildRequires:	systemd-macros
+BuildRequires:	systemd-rpm-macros
 
 %description
 libinput is a library to handle input devices in Wayland
