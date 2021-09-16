@@ -44,7 +44,7 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-%meson -Dudev-dir="$(dirname %{_udevrulesdir})" -Ddocumentation=false -Ddebug-gui=false
+%meson -Dudev-dir="$(dirname %{_udevrulesdir})" -Ddocumentation=false -Ddebug-gui=false -Dtests=false
 
 %build
 %meson_build
