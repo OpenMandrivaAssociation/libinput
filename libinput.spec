@@ -4,7 +4,7 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.19.1
+Version:	1.19.2
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -60,9 +60,7 @@ Development files and heders for %{name}.
 %{_udevrulesdir}/*.rules
 %{_libexecdir}/libinput/libinput*
 %{_datadir}/%{name}/*.quirks
-%{_mandir}/man1/%{name}*.1*
-%dir %{_datadir}/zsh
-%dir %{_datadir}/zsh/site-functions
+%doc %{_mandir}/man1/%{name}*.1*
 %{_datadir}/zsh/site-functions/*
 
 %files -n %{libname}
