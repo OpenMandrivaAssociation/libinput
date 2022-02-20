@@ -4,12 +4,12 @@
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.19.3
+Version:	1.20.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/wiki/Software/libinput/
-Source0:	http://www.freedesktop.org/software/libinput/%{name}-%{version}.tar.xz
+Source0:	https://gitlab.freedesktop.org/libinput/libinput/-/archive/%{version}/%{name}-%{version}.tar.bz2
 BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libsystemd)
