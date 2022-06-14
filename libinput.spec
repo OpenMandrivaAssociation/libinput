@@ -1,10 +1,12 @@
+%global udevdir %(dirname %{_udevrulesdir})
+
 %define major 10
 %define libname %mklibname input %{major}
 %define develname %mklibname -d input
 
 Summary:	Handles input devices for display servers
 Name:		libinput
-Version:	1.20.1
+Version:	1.21.0
 Release:	1
 License:	LGPLv2
 Group:		System/Libraries
@@ -44,7 +46,7 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-%meson -Dudev-dir="$(dirname %{_udevrulesdir})" -Ddocumentation=false -Ddebug-gui=false -Dtests=false
+%meson -Dudev-dir=%{udevdir} -Ddocumentation=false -Ddebug-gui=false -Dtests=false
 
 %build
 %meson_build
@@ -54,9 +56,9 @@ Development files and heders for %{name}.
 
 %files
 %{_bindir}/libinput
-/lib/udev/libinput-device-group
-/lib/udev/libinput-fuzz-extract
-/lib/udev/libinput-fuzz-to-zero
+%{udevdir}/libinput-device-group
+%{udevdir}/libinput-fuzz-extract
+%{udevdir}/libinput-fuzz-to-zero
 %{_udevrulesdir}/*.rules
 %{_libexecdir}/libinput/libinput*
 %{_datadir}/%{name}/*.quirks
