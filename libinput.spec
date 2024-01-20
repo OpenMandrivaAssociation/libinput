@@ -1,8 +1,11 @@
 %global udevdir %(dirname %{_udevrulesdir})
 
 %define major 10
-%define libname %mklibname input %{major}
+%define oldlibname %mklibname input 10
+%define libname %mklibname input
 %define develname %mklibname -d input
+
+%bcond_with bootstrap
 
 Summary:	Handles input devices for display servers
 Name:		libinput
@@ -16,8 +19,10 @@ BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	pkgconfig(libevdev)
-BuildRequires:	pkgconfig(libwacom)
 BuildRequires:	pkgconfig(check)
+%if ! %{with bootstrap}
+BuildRequires:	pkgconfig(libwacom)
+%endif
 BuildRequires:	meson
 BuildRequires:	systemd-rpm-macros
 
@@ -29,6 +34,7 @@ compositors and to provide a generic X.Org input driver.
 Summary:	Libraries for libinput
 Group:		System/Libraries
 Requires:	%{name} = %{EVRD}
+%rename %{oldlibname}
 
 %description -n %{libname}
 libinput is a library to handle input devices in Wayland
@@ -46,7 +52,13 @@ Development files and heders for %{name}.
 %prep
 %autosetup -p1
 
-%meson -Dudev-dir=%{udevdir} -Ddocumentation=false -Ddebug-gui=false -Dtests=false
+%meson	-Dudev-dir=%{udevdir} \
+	-Ddocumentation=false \
+	-Ddebug-gui=false \
+	-Dtests=false \
+%if %{with bootstrap}
+	-Dlibwacom=false
+%endif
 
 %build
 %meson_build
