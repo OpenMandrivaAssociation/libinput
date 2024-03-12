@@ -10,11 +10,12 @@
 Summary:	Handles input devices for display servers
 Name:		libinput
 Version:	1.25.0
-Release:	1
+Release:	2
 License:	LGPLv2
 Group:		System/Libraries
 URL:		http://www.freedesktop.org/wiki/Software/libinput/
 Source0:	https://gitlab.freedesktop.org/libinput/libinput/-/archive/%{version}/%{name}-%{version}.tar.bz2
+Patch0:		libinput-1.25.0-default-enable-tap.patch
 BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libsystemd)

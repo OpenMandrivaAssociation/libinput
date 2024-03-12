@@ -1,0 +1,34 @@
+diff -up libinput-1.25.0/src/evdev-mt-touchpad-tap.c.omv~ libinput-1.25.0/src/evdev-mt-touchpad-tap.c
+--- libinput-1.25.0/src/evdev-mt-touchpad-tap.c.omv~	2024-03-12 20:42:52.658943783 +0100
++++ libinput-1.25.0/src/evdev-mt-touchpad-tap.c	2024-03-12 20:46:57.773627792 +0100
+@@ -1420,6 +1420,22 @@ static enum libinput_config_tap_state
+ tp_tap_default(struct evdev_device *evdev)
+ {
+ 	/**
++	 * OpenMandriva: We disagree with upstream's choice to disable
++	 * tap by default, for the simple reason that their assumption
++	 * that people don't know that tapping is a thing couldn't be
++	 * any more wrong.
++	 * All other OSes enable tapping by default, therefore people
++	 * expect this behavior and may not even know that there are
++	 * other possibilities to click on devices where it isn't
++	 * obvious (e.g. touchpads where you can press down the lower-left
++	 * side of the touchpad to click).
++	 * That makes people who know that tap-to-click is not something
++	 * enforced by the hardware the ones who are far more likely to
++	 * know how to change defaults.
++	 */
++	return LIBINPUT_CONFIG_TAP_ENABLED;
++#if 0
++	/**
+ 	 * If we don't have a left button we must have tapping enabled by
+ 	 * default.
+ 	 */
+@@ -1436,6 +1452,7 @@ tp_tap_default(struct evdev_device *evde
+ 	 *   it.
+ 	 */
+ 	return LIBINPUT_CONFIG_TAP_DISABLED;
++#endif
+ }
+ 
+ static enum libinput_config_tap_state
