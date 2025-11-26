@@ -16,6 +16,7 @@ Group:		System/Libraries
 URL:		https://www.freedesktop.org/wiki/Software/libinput/
 Source0:	https://gitlab.freedesktop.org/libinput/libinput/-/archive/%{version}/%{name}-%{version}.tar.bz2
 Patch0:		libinput-1.25.0-default-enable-tap.patch
+BuildRequires:	pkgconfig(lua)
 BuildRequires:	pkgconfig(mtdev)
 BuildRequires:	pkgconfig(libudev)
 BuildRequires:	pkgconfig(libsystemd)
